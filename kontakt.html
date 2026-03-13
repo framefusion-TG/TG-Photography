@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontakt | Dein Fotograf in Linz | Jetzt Termin anfragen</title>
+    <meta name="description" content="Authentische Fotografie in Linz und Umgebung. Spezialisiert auf emotionale Hochzeitsreportagen, professionelle Business-Portraits und künstlerische Studio-Sessions.">
+    <meta name="keywords" content="Fotograf Linz, Hochzeitsfotograf Oberösterreich, Business Portraits, Studiofotografie, Eventfotograf">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #b5a397; 
+            --bg-color: #faf9f6; 
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation - Identisch */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+            background-color: var(--white);
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary-color); }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 180px); /* Platz für Header/Footer */
+            padding: 60px 20px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 50px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05); /* Gleicher Schatten wie Über-Mich */
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .contact-card h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .contact-card p {
+            margin-bottom: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* FORMULAR STYLING */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border: 1px solid #eee;
+            background-color: #fcfcfc;
+            font-family: Arial, sans-serif; /* Bessere Lesbarkeit beim Tippen */
+            font-size: 15px;
+            border-radius: 0; /* Minimalistischer Look */
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: var(--text-dark);
+            color: var(--white);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 14px;
+            color: #999;
+            background: var(--white);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* --- MOBILE OPTIMIERUNG HEADER --- */
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px; /* Weniger Platz am Rand auf dem Handy */
+        flex-direction: column; /* Logo oben, Menü darunter */
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 18px; /* Logo etwas kleiner */
+        letter-spacing: 2px;
+    }
+
+    nav ul {
+        gap: 15px; /* Abstand zwischen den Links verringern */
+        flex-wrap: wrap; /* Erlaubt Umbruch, falls es immer noch zu breit ist */
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px; /* Schriftgröße der Links reduzieren */
+        letter-spacing: 1px;
+    }
+}
+
+/* Speziell für ganz kleine Handys */
+@media (max-width: 400px) {
+    nav ul {
+        gap: 10px;
+    }
+    nav a {
+        font-size: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">TG Photography</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <div class="contact-card">
+            <h1>Schreib mir eine Nachricht</h1>
+            <p>Erzählt mir von euren Plänen und lasst uns gemeinsam etwas Schönes erschaffen.</p>
+            
+            <form action="https://formspree.io/f/mzdjeanp" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Dein vollständiger Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-Mail Adresse</label>
+                    <input type="email" id="email" name="email" placeholder="beispiel@mail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">Wofür interessierst du dich?</label>
+                    <select id="interest" name="interest">
+                        <option value="hochzeit">Hochzeitsfotografie</option>
+                        <option value="studio">Studio-Portrait (Künstlerisch)</option>
+                        <option value="business">Business & Karriere-Portraits</option>
+                        <option value="event">Events & Reportagen</option>
+                        <option value="sonstiges">Etwas anderes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Deine Nachricht</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Erzähl mir ein bisschen über dein Vorhaben..." required></textarea>
+                </div>
+
+                <button type="submit">Nachricht senden</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 TG Photography. Alle Rechte vorbehalten.
+    </footer>
+
+</body>
+</html>

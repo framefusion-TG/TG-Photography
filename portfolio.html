@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Portfolio | Hochzeiten, Events & Business Portraits | TG Photography</title>
+    <meta name="description" content="Authentische Fotografie in Linz und Umgebung. Spezialisiert auf emotionale Hochzeitsreportagen, professionelle Business-Portraits und künstlerische Studio-Sessions.">
+    <meta name="keywords" content="Fotograf Linz, Hochzeitsfotograf Oberösterreich, Business Portraits, Studiofotografie, Eventfotograf">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #b5a397; 
+            --bg-color: #faf9f6;      
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+            background-color: var(--white); 
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 150px 20px;
+            background-color: #fafafa;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #666666;
+        }
+
+        /* Services / Leistungen */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 100px 50px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+            width: 350px;
+            border: 1px solid #eaeaea;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #b5a397;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 14px;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">TG Photography</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section class="portfolio-header">
+        <h1>Mein Portfolio</h1>
+        <p>Ein Einblick in meine neuesten Arbeiten und Geschichten.</p>
+    </section>
+
+    <div class="portfolio-grid">
+        
+        <div class="portfolio-item" onclick="openGallery('hochzeit-anna-lukas')">
+            <img src="img/hochzeit_cover.jpg" alt="Hochzeitsfotografie">
+            <div class="overlay">
+                <div class="project-title">Michelle & Peter | Hochzeit</div>
+            </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openGallery('studio-session')">
+            <img src="img/studio_cover.jpg" alt="Studio Portrait schwarzweiß">
+            <div class="overlay">
+                <div class="project-title">Studio Session | Anna</div>
+            </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openGallery('event-Upper Austria Ladies')">
+            <img src="img/event_cover.jpg" alt="Event Fotografie Tennis Linz">
+            <div class="overlay">
+                <div class="project-title">Upper Austria Laddies Linz | Event</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="galleryModal" class="modal">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <div class="modal-content" id="modalImages">
+            </div>
+    </div>
+
+     <div id="lightboxModal" class="lightbox" onclick="closeLightbox()">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightboxImg" src="" alt="Vollbild Ansicht">
+
+</div>   
+
+    
+</main>
+
+<style>
+    /* Styling für das Portfolio-Raster */
+    .portfolio-header {
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Automatische Spalten */
+        gap: 20px;
+        padding: 0 50px 100px 50px;
+    }
+
+    .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 3 / 2; /* Einheitliche Größe der Kacheln */
+        cursor: pointer;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    /* Hover-Effekt: Bild zoomt leicht */
+    .portfolio-item:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Das Overlay für den Projektnamen */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); /* Dunkler Schleier */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover .overlay {
+        opacity: 1;
+    }
+
+    .project-title {
+        color: white;
+        font-size: 18px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid white;
+        padding-bottom: 5px;
+    }
+
+/* Das Modal (Hintergrund) blendet sanft ein */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    overflow-y: auto;
+    padding-top: 80px;
+    
+    /* Animation für den Hintergrund */
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Der Inhalt (die Bilder) kommt leicht von unten nach oben gehovert */
+.modal-content {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    padding-bottom: 50px;
+    
+    /* Animation für den Inhalt */
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Definition der Animationen */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px); /* Startet 30px weiter unten */
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0); /* Endet an der Originalposition */
+    }
+}
+
+/* Schließen-Button Animation */
+.close {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    color: #333;
+    z-index: 1001;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close:hover {
+    color: #b5a397;
+    transform: rotate(90deg); /* Kleiner verspielter Effekt beim Hovern */
+}
+
+    /* Damit die Bilder im Modal schön klein und gleichmäßig sind */
+    .modal-content img {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* Quadratisch für einen modernen Galerie-Look */
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+    }
+
+    .modal-content img:hover {
+        transform: scale(1.02);
+    }
+
+    /* Das Schließen-X oben rechts */
+    .close {
+        position: fixed;
+        top: 25px;
+        right: 40px;
+        font-size: 35px;
+        font-weight: 300;
+        cursor: pointer;
+        color: #333;
+        z-index: 1001;
+        transition: color 0.3s;
+    }
+
+    .close:hover {
+        color: #b5a397;
+    }
+
+    /* Die Lightbox (Ebene 2) */
+.lightbox {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Signalisiert, dass man zum Schließen klicken kann */
+}
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 80vh;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    object-fit: contain; /* Behält das Originalformat bei */
+    animation: scaleIn 0.4s ease;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 50px;
+    color: #333;
+    cursor: pointer;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+    /* Responsive: Auf dem Handy nur 2 Bilder nebeneinander */
+    @media (max-width: 768px) {
+        .modal-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* --- MOBILE OPTIMIERUNG HEADER --- */
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px; /* Weniger Platz am Rand auf dem Handy */
+        flex-direction: column; /* Logo oben, Menü darunter */
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 18px; /* Logo etwas kleiner */
+        letter-spacing: 2px;
+    }
+
+    nav ul {
+        gap: 15px; /* Abstand zwischen den Links verringern */
+        flex-wrap: wrap; /* Erlaubt Umbruch, falls es immer noch zu breit ist */
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px; /* Schriftgröße der Links reduzieren */
+        letter-spacing: 1px;
+    }
+}
+
+/* Speziell für ganz kleine Handys */
+@media (max-width: 400px) {
+    nav ul {
+        gap: 10px;
+    }
+    nav a {
+        font-size: 10px;
+    }
+}
+
+</style>
+
+<script>
+    // Beispieldaten: Hier definierst du, welche Bilder zu welchem Projekt gehören
+    const projects = {
+        'hochzeit-anna-lukas': [
+            'img/M-P11 (3).jpg',
+            'img/M-P11 (4).jpg',
+            'img/M-P11 (5).jpg',
+            'img/M-P11 (6).jpg',
+            'img/M-P11 (8).jpg',
+            'img/M-P11 (9).jpg',
+            'img/M-P11 (11).jpg',  
+            'img/M-P11 (12).jpg'
+        ],
+        'studio-session': [ 
+            'img/Fotoshoot Ann/Studio-Anno.jpg', 
+            'img/Fotoshoot Ann/Studio-Anno3.jpg',
+            'img/Fotoshoot Ann/Studio-Anno4.jpg',
+            'img/Fotoshoot Ann/Studio-Anno5.jpg',
+            'img/Fotoshoot Ann/Studio-Anno6.jpg',
+            'img/Fotoshoot Ann/Studio-Anno7.jpg',
+        ],
+        'event-Upper Austria Ladies': [ 
+            'img/Events (2).jpg', 
+            'img/Events (3).jpg', 
+            'img/Events (4).jpg', 
+            'img/Events (5).jpg', 
+            'img/Events (6).jpg', 
+        ]
+    };
+
+   function openGallery(projectId) {
+        const modal = document.getElementById('galleryModal');
+        const container = document.getElementById('modalImages');
+        
+        container.innerHTML = ''; // Vorherigen Inhalt leeren
+        
+        if (projects[projectId]) {
+            projects[projectId].forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                
+                // HIER WAR DER FEHLER: Die Klick-Funktion für die Einzelansicht
+                img.onclick = function() {
+                    openLightbox(this.src);
+                };
+                
+                container.appendChild(img);
+            });
+            
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden"; 
+        }
+    }
+
+    function openLightbox(src) {
+        const lightbox = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+        
+        lightbox.style.display = "flex"; // Zeigt die Lightbox an
+        lightboxImg.src = src;
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightboxModal').style.display = "none";
+    }
+
+    function closeGallery() {
+        document.getElementById('galleryModal').style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    // Schließen beim Klick außerhalb
+    window.onclick = function(event) {
+        const gModal = document.getElementById('galleryModal');
+        const lModal = document.getElementById('lightboxModal');
+        if (event.target == gModal) closeGallery();
+        if (event.target == lModal) closeLightbox();
+    }
+</script>
+
+    <footer>
+        &copy; 2026 TG Photography. Alle Rechte vorbehalten.
+    </footer>
+
+</body>
+</html>

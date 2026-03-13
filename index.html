@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fotograf in Linz | Studio, Events & Hochzeiten | TG Photography</title>
+    <meta name="description" content="Authentische Fotografie in Linz und Umgebung. Spezialisiert auf emotionale Hochzeitsreportagen, professionelle Business-Portraits und künstlerische Studio-Sessions.">
+    <meta name="keywords" content="Fotograf Linz, Hochzeitsfotograf Oberösterreich, Business Portraits, Studiofotografie, Eventfotograf">
+    
+    <style>
+        :root {
+            --primary-color: #b5a397; /* Warmer Sandton */
+            --bg-color: #faf9f6;      /* Off-White / Eierschale */
+            --text-dark: #2d2d2d;     /* Anthrazit */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif, Arial; /* Klassische Serif-Schrift für Eleganz */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Navigation - Transparent über dem Bild */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* HERO BEREICH - Hier kommt die Emotion rein */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('img/hero-background.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 80px); /* Responsive Schriftgröße */
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-style: italic;
+            max-width: 700px;
+            letter-spacing: 1px;
+        }
+
+        /* SECTIONS */
+        .intro {
+            padding: 120px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        /* LEISTUNGEN MIT BILDERN */
+        .services-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0; /* Nahtloser Übergang für modernen Look */
+            padding-bottom: 100px;
+        }
+
+        .service-box {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            color: var(--white);
+        }
+
+        .service-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: 0.6s ease;
+        }
+
+        .service-box:hover img {
+            filter: brightness(0.5);
+            transform: scale(1.05);
+        }
+
+        .service-text {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+        }
+
+        .service-text h3 {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: 1px solid var(--white);
+            color: var(--white);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        /* --- MOBILE OPTIMIERUNG HEADER --- */
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px; /* Weniger Platz am Rand auf dem Handy */
+        flex-direction: column; /* Logo oben, Menü darunter */
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 18px; /* Logo etwas kleiner */
+        letter-spacing: 2px;
+    }
+
+    nav ul {
+        gap: 15px; /* Abstand zwischen den Links verringern */
+        flex-wrap: wrap; /* Erlaubt Umbruch, falls es immer noch zu breit ist */
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px; /* Schriftgröße der Links reduzieren */
+        letter-spacing: 1px;
+    }
+}
+
+/* Speziell für ganz kleine Handys */
+@media (max-width: 400px) {
+    nav ul {
+        gap: 10px;
+    }
+    nav a {
+        font-size: 10px;
+    }
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"> TG Photography</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Momente für die Ewigkeit.</h1>
+        <p>Ästhetische Fotografie, die eure Geschichte erzählt.</p>
+        <a href="portfolio.html" class="btn">Portfolio ansehen</a>
+    </section>
+
+    <section class="intro">
+        <h2>Hi, ich bin Tobias</h2>
+        <p>Ich glaube daran, dass die schönsten Bilder die sind, die man nicht plant. In einer Welt voller Filter suche ich das Echte. Seit über 3 Jahren begleite ich Menschen an ihren wichtigsten Tagen.</p>
+    </section>
+
+    <section class="services-modern">
+        <div class="service-box">
+            <img src="img/hochzeit-teaser.jpg" alt="Hochzeit">
+            <div class="service-text">
+                <h3>Hochzeiten</h3>
+                <p>Euer Ja-Wort, authentisch festgehalten.</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <img src="img/studio-teaser.jpg" alt="Studio">
+            <div class="service-text">
+                <h3>Portrait</h3>
+                <p>Im Studio oder in der Natur.</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <img src="img/event-teaser.jpg" alt="Events">
+            <div class="service-text">
+                <h3>Events</h3>
+                <p>Eure Veranstaltung perfekt dokumentiert.</p>
+            </div>
+        </div>
+    </section>
+
+      <footer>
+        &copy; 
+         <center>2026 TG Photography. Alle Rechte vorbehalten.</center>    
+    </footer>
+
+</body>
+</html>
